@@ -15,4 +15,3 @@ az group list --output table
 
 #Filter List by Name
 az group list --query "[?name == '<rg name>']"
-
