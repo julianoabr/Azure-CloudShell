@@ -1,1 +1,9 @@
+#View your subscriptions
+az account list
+
+#View Resource Groups
+az resource list
+
+#Open Editor
+code .
 
