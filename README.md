@@ -1,4 +1,4 @@
-# Azure Scripts - Powershell and Cloud Shell
+# Azure Cloud Shell Scripts - Powershell and Bash
 
 ## Know more about Bash in this link:
 
