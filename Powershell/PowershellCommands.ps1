@@ -20,3 +20,15 @@ $rgName = $rgNametoDel.ResourceGroupName
 Get-AzResourceLock | Where-Object -FilterScript {$PSItem.resourcegroupname -eq $rgName} | Remove-AzResourceLock -Force -Verbose
 Remove-AzResourceGroup -Name $rgName -Force -Verbose
 
+#Azure VM
+Get-AzVM
+
+#Update Azure VM Type
+$resourceGroupName = 'AZ1000202-RG'
+$AzVm = Get-AzVM -Name SimpleWinVM -ResourceGroupName $resourceGroupName
+$azVm.HardwareProfile.VmSize = "Standard_A3"
+Update-AzVM -ResourceGroupName $resourceGroupName -VM $azVm -Verbose
+
+
+
+
