@@ -15,7 +15,7 @@ Get-AzResourceGroup | Where-Object -FilterScript {$PSItem.ResourceGroupName -eq 
 Remove-AzResourceGroup -Force -Verbose
 
 #Remove Resource Group with Lock
-$rgNametoDel = Get-AzResourceGroup | Where-Object -FilterScript {$PSItem.ResourceGroupName -eq 'az1000201-RG'}
+$rgNametoDel = Get-AzResourceGroup | Where-Object -FilterScript {$PSItem.ResourceGroupName -eq 'your-RG-name'}
 $rgName = $rgNametoDel.ResourceGroupName
 Get-AzResourceLock | Where-Object -FilterScript {$PSItem.resourcegroupname -eq $rgName} | Remove-AzResourceLock -Force -Verbose
 Remove-AzResourceGroup -Name $rgName -Force -Verbose
