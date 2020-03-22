@@ -7,3 +7,12 @@ az resource list
 #Open Editor
 code .
 
+#Create Resource Group
+az group create --name "YourRGName" --location "Est Us"
+
+#View Resource Groups
+az group list --output table
+
+#Filter List by Name
+az group list --query "[?name == '<rg name>']"
+
