@@ -15,10 +15,3 @@ az group list --output table
 
 #Filter List by Name
 az group list --query "[?name == '<rg name>']"
-
-#Remove Resource Group with Lock
-$rgNametoDel = Get-AzResourceGroup | Where-Object -FilterScript {$PSItem.ResourceGroupName -eq 'your-RG-name'}
-$rgName = $rgNametoDel.ResourceGroupName
-$rgLock = Get-AzResourceLock | Where-Object -FilterScript {$PSItem.resourcegroupname -eq $rgName}
-Get-AzResourceLock | Where-Object -FilterScript {$PSItem.resourcegroupname -eq $rgName} | Remove-AzResourceLock -Force -Verbose
-Remove-AzResourceGroup -Name $rgName -Force -Verbose
